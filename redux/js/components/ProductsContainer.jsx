@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addToCart } from '../actions';
 import { getVisibleProducts } from '../reducers/products';
-import ProductItem from '../../../common/components/ProductItem.jsx';
-import ProductsList from '../../../common/components/ProductsList.jsx';
+import ProductItem from './ProductItem.jsx';
+import ProductsList from './ProductsList.jsx';
 
 class ProductsContainer extends Component {
     render() {

@@ -1,4 +1,4 @@
-import shop from '../../../common/api/shop';
+import shop from '../api/shop';
 
 export const RECEIVE_PRODUCTS = 'RECEIVE_PRODUCTS';
 function receiveProducts(products) {
