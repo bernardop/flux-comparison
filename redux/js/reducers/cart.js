@@ -16,7 +16,7 @@ function addedIds(state = initialState.addedIds, action) {
             }
             return [...state, action.productId];
         default:
-            return state;    
+            return state;
     }
 }
 
@@ -29,7 +29,7 @@ function quantityById(state = initialState.quantityById, action) {
                 [productId]: (state[productId] || 0) + 1
             };
         default:
-            return state;    
+            return state;
     }
 }
 
@@ -45,12 +45,4 @@ export default function cart(state = initialState, action) {
                 quantityById: quantityById(state.quantityById, action)
             };
     }
-}
-
-export function getQuantity(state, productId) {
-    return state.quantityById[productId] || 0;
-}
-
-export function getAddedIds(state) {
-    return state.addedIds;
 }

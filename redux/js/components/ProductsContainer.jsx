@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addToCart } from '../actions';
-import { getVisibleProducts } from '../reducers/products';
+import { visibleProducts } from '../selectors';
 import ProductItem from './ProductItem.jsx';
 import ProductsList from './ProductsList.jsx';
 
@@ -24,7 +24,7 @@ class ProductsContainer extends Component {
 
 function mapStateToProps(state) {
     return {
-        products: getVisibleProducts(state.products)
+        products: visibleProducts(state)
     };
 }
 
