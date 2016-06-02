@@ -21,7 +21,12 @@ export class CartStore {
     });
 
     checkout = action(() => {
-        this.cartProducts[0].store.loadProducts();
-        this.cartProducts = [];
+        shop.buyProducts(this.cartProducts, action(() => {
+            console.table(this.cartProducts.reduce((result, product) => {
+                return result.concat({ 'item': product.title, 'quantity': product.quantity });
+            }, []));
+            this.cartProducts[0].store.loadProducts();
+            this.cartProducts = [];
+        }));
     });
 }
